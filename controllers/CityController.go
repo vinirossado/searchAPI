@@ -10,7 +10,7 @@ import (
 func FindCities(c *gin.Context) {
 
 	var cities []models.City
-	models.DB.Find(&cities)
+	models.DB.Table("City").Find(&cities)
 
 	c.JSON(http.StatusOK, gin.H{"data": cities})
 
@@ -44,7 +44,7 @@ func FindCity(c *gin.Context) { // Get model if exist
 func UpdateCity(c *gin.Context) {
 	// Get model if exist
 	var city models.City
-	if err := models.DB.Where("id = ?", c.Param("id")).First(&city).Error; err != nil {
+	if err := models.DB.Table("City").Where("id = ?", c.Param("id")).First(&city).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Record not found!"})
 		return
 	}
@@ -56,7 +56,7 @@ func UpdateCity(c *gin.Context) {
 		return
 	}
 
-	models.DB.Model(&city).Updates(input)
-
+	models.DB.Model(&city).Updates((models.City{Name: input.Name}))
+	models.DB.Table("City").Save(&city)
 	c.JSON(http.StatusOK, gin.H{"data": city})
 }
