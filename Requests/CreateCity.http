@@ -1,0 +1,8 @@
+POST http://localhost:8080/cities HTTP/1.1
+content-type: application/json
+
+{
+   "name": "Zagreb",
+    "latitude": "45.8401104",
+    "longitude": "15.824247"
+}
