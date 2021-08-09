@@ -2,7 +2,6 @@ package main
 
 import (
 	"net/http"
-	"os"
 	"searchAPI/controllers"
 	"searchAPI/models"
 
@@ -18,7 +17,6 @@ func main() {
 	// 	c.JSON(http.StatusOK, gin.H{"data": "Hello World"})
 	// })
 
-	
 	models.ConnectDatabase()
 
 	r.GET("/cities", controllers.FindCities)
@@ -26,7 +24,6 @@ func main() {
 	r.GET("/cities/:id", controllers.FindCity)
 	r.PATCH("/cities/:id", controllers.UpdateCity) // new
 
-	x := ":" + os.Getenv("ASPNETCORE_PORT")
-	http.ListenAndServe(x, r)
+	http.ListenAndServe(":3500", r)
 
 }
