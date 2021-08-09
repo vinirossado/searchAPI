@@ -4,6 +4,7 @@ go 1.16
 
 require (
 	github.com/Masterminds/semver v1.5.0
+	github.com/algolia/algoliasearch-client-go/v3 v3.21.0 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.1 // indirect
 	github.com/denisenkom/go-mssqldb v0.10.0
 	github.com/gin-gonic/gin v1.7.3

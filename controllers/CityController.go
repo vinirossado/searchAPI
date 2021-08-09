@@ -10,10 +10,10 @@ import (
 func FindCities(c *gin.Context) {
 
 	var cities []models.City
+
 	models.DB.Table("City").Find(&cities)
 
 	c.JSON(http.StatusOK, gin.H{"data": cities})
-
 }
 
 func CreateCity(c *gin.Context) {
