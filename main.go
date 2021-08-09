@@ -24,6 +24,6 @@ func main() {
 	r.GET("/cities/:id", controllers.FindCity)
 	r.PATCH("/cities/:id", controllers.UpdateCity) // new
 
-	http.ListenAndServe(":3500", r)
+	http.ListenAndServe(":8080", r)
 
 }
