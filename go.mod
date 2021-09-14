@@ -1,31 +1,29 @@
 module searchAPI
 
-go 1.16
+go 1.17
 
 require (
-	github.com/Masterminds/semver v1.5.0
-	github.com/cpuguy83/go-md2man/v2 v2.0.1 // indirect
-	github.com/denisenkom/go-mssqldb v0.10.0
-	github.com/gin-gonic/gin v1.7.3
-	github.com/go-delve/delve v1.7.0 // indirect
-	github.com/jinzhu/gorm v1.9.16
-	github.com/jinzhu/now v1.1.2
-	github.com/mattn/go-colorable v0.1.8 // indirect
-	github.com/mattn/go-isatty v0.0.13 // indirect
-	github.com/mattn/go-runewidth v0.0.13 // indirect
-	github.com/mattn/go-zglob v0.0.3
-	github.com/mh-cbon/go-msi v0.0.0-20170907180328-7f05345d485b
-	github.com/mh-cbon/stringexec v0.0.0-20160727103857-5a080a1a4118
-	github.com/peterh/liner v1.2.1 // indirect
-	github.com/russross/blackfriday v1.6.0 // indirect
-	github.com/satori/go.uuid v1.2.0
-	github.com/sirupsen/logrus v1.8.1 // indirect
-	github.com/spf13/cobra v1.2.1 // indirect
-	github.com/urfave/cli v1.22.5
-	go.starlark.net v0.0.0-20210602144842-1cdb82c9e17a // indirect
-	golang.org/x/arch v0.0.0-20210727222714-28578f966459 // indirect
-	golang.org/x/sys v0.0.0-20210806184541-e5e7981a1069 // indirect
-	gorm.io/driver/sqlserver v1.0.7
-	gorm.io/gorm v1.21.12
+	github.com/gin-gonic/gin v1.7.4
+	github.com/joho/godotenv v1.3.0
+	golang.org/x/sys v0.0.0-20210910150752-751e447fb3d0 // indirect
+	golang.org/x/text v0.3.7 // indirect
 
+)
+
+require (
+	github.com/gin-contrib/sse v0.1.0 // indirect
+	github.com/go-playground/locales v0.14.0 // indirect
+	github.com/go-playground/universal-translator v0.18.0 // indirect
+	github.com/go-playground/validator/v10 v10.9.0 // indirect
+	github.com/golang/protobuf v1.5.2 // indirect
+	github.com/json-iterator/go v1.1.12 // indirect
+	github.com/leodido/go-urn v1.2.1 // indirect
+	github.com/mattn/go-isatty v0.0.14 // indirect
+	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
+	github.com/modern-go/reflect2 v1.0.2 // indirect
+	github.com/ugorji/go/codec v1.2.6 // indirect
+	golang.org/x/crypto v0.0.0-20210817164053-32db794688a5 // indirect
+	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
+	google.golang.org/protobuf v1.26.0 // indirect
+	gopkg.in/yaml.v2 v2.4.0 // indirect
 )

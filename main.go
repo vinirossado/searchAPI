@@ -1,29 +1,47 @@
 package main
 
 import (
+	"log"
 	"net/http"
 	"searchAPI/controllers"
-	"searchAPI/models"
 
 	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
 )
 
-func main() {
-	gin.SetMode(gin.ReleaseMode)
+func init() {
+	if err := godotenv.Load(); err != nil {
+		log.Println("no env gotten")
+	}
+}
 
+func main() {
 	r := gin.New()
 
-	// r.GET("/", func(c *gin.Context) {
-	// 	c.JSON(http.StatusOK, gin.H{"data": "Hello World"})
-	// })
+	gin.SetMode(gin.ReleaseMode)
 
-	models.ConnectDatabase()
+	c := controllers.NewController()
 
-	r.GET("/cities", controllers.FindCities)
-	r.POST("/cities", controllers.CreateCity)
-	r.GET("/cities/:id", controllers.FindCity)
-	r.PATCH("/cities/:id", controllers.UpdateCity) // new
+	v1 := r.Group("/api/v1")
+	{
+		schools := v1.Group("/schools/")
+		{
+			schools.GET(":id", c.GetSchool)
+			schools.GET("", c.GetSchools)
+		}
+
+		cities := v1.Group("/cities")
+		{
+			cities.GET(":id", c.GetCity)
+			cities.GET("", c.GetCities)
+		}
+
+		countries := v1.Group("/countries")
+		{
+			countries.GET(":id", c.GetCountry)
+			countries.GET("", c.GetCountries)
+		}
+	}
 
 	http.ListenAndServe(":8080", r)
-
 }
