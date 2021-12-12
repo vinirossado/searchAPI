@@ -41,6 +41,12 @@ func main() {
 			countries.GET(":id", c.GetCountry)
 			countries.GET("", c.GetCountries)
 		}
+
+		home := v1.Group("/home")
+		{
+			home.GET(":id", c.GetHome)
+			home.GET("", c.GetHome)
+		}
 	}
 
 	http.ListenAndServe(":8080", r)
