@@ -2,7 +2,7 @@ package models
 
 type City struct {
 	ID        string `json:"id"`
-	IDCountry int    `json:"idCountry"`
+	IDCountry string `json:"idCountry"`
 	Name      string `json:"name"`
 	Latitude  string `json:"latitude"`
 	Longitude string `json:"longitude"`
